@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/store/store";
+import { AppDispatch } from "../store/store";
 import { fetchFrases } from "@/features/frases/frasesSlice";
 import SearchBar from "@/features/frases/component/SearchBar";
 import FraseList from "@/features/frases/component/FraseList";
@@ -22,29 +22,24 @@ export default function AddCardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#533483] to-[#0f3460]">
-      {/* Navbar */}
-      <nav className="bg-[#0f172a] shadow-md py-4 px-6">
-        <h1 className="text-white text-xl font-bold">📘 Proyecto de Leandro</h1>
-      </nav>
-
-      <div className="p-6">
+   <div className="w-full max-w-7xl p-6">
         <h1 className="text-center text-white text-3xl font-bold mb-8">
           Listado de Frases
         </h1>
 
-        <div className="flex justify-between mb-6 gap-4">
-          <button
-            onClick={ViewAgregarFrase}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow"
-          >
-            Agregar Frase
-          </button>
-        </div>
+          <div className="flex justify-between mb-6 gap-4">
+            <button
+              onClick={ViewAgregarFrase}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow"
+            >
+              Agregar Frase
+            </button>
+          </div>
 
-        <SearchBar />
-        <FraseList />
-      </div>
+      <SearchBar />
+      <FraseList />
     </div>
   );
 }
+
+

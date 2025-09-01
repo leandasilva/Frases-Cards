@@ -18,7 +18,7 @@ const initialState: FrasesState = {
   frases: [],
   status: "idle",
   error: null,
-  search: "",      // 👈 inicializamos
+  search: "",
 };
 
 const  FrasesState = {
@@ -31,6 +31,8 @@ export const fetchFrases = createAsyncThunk("frases/fetchFrases", async () => {
   const res = await axios.get("https://api-cards-4a1i.onrender.com/api/listarfrasesTodas");
   return res.data;
 });
+
+
 export const eliminarFraseAsync = createAsyncThunk(
   "frases/eliminarFraseAsync",
   async (id: string) => {

@@ -1,4 +1,3 @@
-// store/store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import frasesReducer from "@/features/frases/frasesSlice";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
@@ -9,12 +8,13 @@ export const store = configureStore({
   },
 });
 
-// Tipos para dispatch y selector
+// Types
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-// Hooks tipados que debes exportar
-export const useAppDispatch: () => AppDispatch = useDispatch;
+// Typed hooks
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
 
 
