@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const frasesApi = createApi({
   reducerPath: "frasesApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api-frases-cards.onrender.com/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api-cards-4a1i.onrender.com/api" }),
   endpoints: (builder) => ({
     listarFrases: builder.query({
       query: () => "/listarfrasesTodas",

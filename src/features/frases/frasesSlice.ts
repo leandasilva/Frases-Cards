@@ -28,13 +28,13 @@ const  FrasesState = {
 
 // ✅ Thunks
 export const fetchFrases = createAsyncThunk("frases/fetchFrases", async () => {
-  const res = await axios.get("https://api-frases-cards.onrender.com/api/listarfrasesTodas");
+  const res = await axios.get("https://api-cards-4a1i.onrender.com/api/listarfrasesTodas");
   return res.data;
 });
 export const eliminarFraseAsync = createAsyncThunk(
   "frases/eliminarFraseAsync",
   async (id: string) => {
-    await fetch(`https://api-frases-cards.onrender.com/frases/${id}`, {
+    await fetch(`https://api-cards-4a1i.onrender.com/frases/${id}`, {
       method: "DELETE",
     });
     return id;
@@ -45,7 +45,7 @@ export const eliminarFraseAsync = createAsyncThunk(
 export const addFrase = createAsyncThunk(
   "frases/addFrase",
   async (texto: string) => {
-    const res = await axios.post("https://api-frases-cards.onrender.com/api/agregarfrase", {
+    const res = await axios.post("https://api-cards-4a1i.onrender.com/api/agregarfrase", {
       texto: texto,
     });
     return res.data;
@@ -55,7 +55,7 @@ export const addFrase = createAsyncThunk(
 export const deleteFrase = createAsyncThunk(
   "frases/deleteFrase",
   async (id: string) => {
-    await axios.delete(`https://api-frases-cards.onrender.com/api/eliminarfrase/${id}`);
+    await axios.delete(`https://api-cards-4a1i.onrender.com/api/eliminarfrase/${id}`);
     return id;
   }
 );
