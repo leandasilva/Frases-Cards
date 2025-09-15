@@ -7,23 +7,18 @@ export interface Frase {
   texto: string;
 }
 
-interface FrasesState {
+export interface FrasesState {
   frases: Frase[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
-  search: string;   // 👈 nuevo campo
+  search: string;
 }
 
 const initialState: FrasesState = {
   frases: [],
-  status: "idle",
   error: null,
   search: "",
-};
-
-const  FrasesState = {
-  frases: [],
-  search: "",
+  status: "idle",
 };
 
 // ✅ Thunks
@@ -100,5 +95,3 @@ const frasesSlice = createSlice({
 
 export const { setSearch } = frasesSlice.actions;
 export default frasesSlice.reducer;
-
-
